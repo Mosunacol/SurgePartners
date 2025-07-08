@@ -1,0 +1,54 @@
+/* Estilos específicos para el footer */
+.footer-inner {
+    background-color: #013981 !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-inner h5 {
+    color: #FFFFFF;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-inner h6 {
+    color: #FFFFFF;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.footer-inner .text-muted {
+    color: #FFFFFF !important;
+    line-height: 1.6;
+}
+
+.footer-inner address {
+    font-style: normal;
+}
+
+.footer-inner a {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-inner a:hover {
+    color: #dfdfdf;
+    text-decoration: underline;
+}
+
+.footer-inner .border-top {
+    border-top-color: #dee2e6 !important;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .footer-inner .col-md-6,
+    .footer-inner .col-md-3 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-inner address {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,10 @@
+/* Elimina todos los márgenes y padding del body y html */
+.img {
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+    object-position: center;
+}
+body {
+    margin: 0 !important;
+}

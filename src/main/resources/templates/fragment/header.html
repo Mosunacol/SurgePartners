@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Navegación</title>
+    <link rel="icon" th:href="@{/images/favicon.png}" type="image/png">
+    <link th:href="@{~/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div th:fragment="header">
+    <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;" data-bs-theme="light">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" th:href="@{~/}">
+                <img th:src="@{/images/surge_partners.jpg}" alt="Logo" width="200">
+            </a>
+
+            <!-- Botón toggler (IMPORTANTE) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent" aria-controls="navbarContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Contenido del menú -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active fs-5" th:href="@{~/api/home}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" th:href="@{~/api/about}">Quiénes Somos</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fs-5" href="#" id="dropdownMenu"
+                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <li><a class="dropdown-item" href="#">Acción</a></li>
+                            <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" th:href="@{~/api/contact}">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<script th:src="@{~/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>

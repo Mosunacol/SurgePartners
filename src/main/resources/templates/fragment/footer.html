@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Footer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+          crossorigin="anonymous">
+    <link th:href="@{~/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/footer.css}" rel="stylesheet">
+</head>
+<body>
+
+<!-- Fragmento reutilizable de Footer -->
+<footer th:fragment="footer-inner" class="footer footer-inner bg-light mt-auto py-4 border-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Surge Partners</h5>
+                <p class="text-muted">Soluciones innovadoras para empresas modernas. Consultoría tecnológica y desarrollo estratégico.</p>
+            </div>
+            <div class="col-md-3">
+                <h6>Contacto</h6>
+                <address class="text-muted">
+                    Dirección: Avenida Villas 129C 03 - Bogotá
+                    Email: <a href="mailto:posuna@surgepar.com">posuna@surgepar.com</a><br>
+                    Teléfono: +57 321 3601963
+                </address>
+            </div>
+        </div>
+        <div class="text-center text-muted small mt-3">
+            &copy; <span th:text="${T(java.time.LocalDate).now().year}"></span> Surge Partners - Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+ .contact-image-container {
+             height: 100%;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+         }
+
+         .contact-image {
+             width: 100%;
+             height: auto; /* Mantiene la proporción de la imagen */
+             object-fit: contain; /* Muestra toda la imagen sin recortar */
+             border-radius: 8px;
+             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+             max-height: 500px; /* Altura máxima ajustable según necesites */
+         }
+
+         .form-container {
+             padding-right: 2rem;
+         }
+
+         @media (max-width: 992px) {
+             .contact-image-container {
+                 margin-top: 2rem;
+                 height: auto;
+             }
+             .contact-image {
+                 max-height: 400px; /* Altura menor para móviles */
+             }
+         }

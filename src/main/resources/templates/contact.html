@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Surge Partners</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="icon" th:href="@{/images/favicon.png}" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+          crossorigin="anonymous">
+    <link th:href="@{/css/footer.css}" rel="stylesheet">
+    <style>
+        .contact-image-container {
+             height: 100%;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+         }
+
+         .contact-image {
+             width: 100%;
+             height: auto; /* Mantiene la proporción de la imagen */
+             object-fit: contain; /* Muestra toda la imagen sin recortar */
+             border-radius: 8px;
+             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+             max-height: 500px; /* Altura máxima ajustable según necesites */
+         }
+
+         .form-container {
+             padding-right: 2rem;
+         }
+
+         @media (max-width: 992px) {
+             .contact-image-container {
+                 margin-top: 2rem;
+                 height: auto;
+             }
+             .contact-image {
+                 max-height: 400px; /* Altura menor para móviles */
+             }
+         }
+    </style>
+</head>
+<body>
+<!-- Insertar header -->
+<div th:insert="~{fragment/header :: header}"></div>
+
+<main class="container my-5">
+    <div class="row">
+        <!-- Columna del formulario (ocupará 6 columnas en pantallas grandes) -->
+        <div class="col-lg-6 form-container">
+            <h1 class="mb-4">Contáctenos</h1>
+
+            <!-- Mensaje de éxito -->
+            <div th:if="${param.success}" class="alert alert-success success-message">
+                ¡Gracias por contactarnos! Hemos recibido tu mensaje y te responderemos pronto.
+            </div>
+
+            <form id="contactForm" th:action="@{/contact}" method="post" class="contact-form bg-white p-4 rounded">
+                <!-- Campos del formulario (mantén los mismos que ya tienes) -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre completo*</label>
+                    <input type="text" class="form-control" id="name" name="name"
+                           th:value="${contactForm != null} ? ${contactForm.name} : ''"
+                           required minlength="3" maxlength="50">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico*</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                           th:value="${contactForm != null} ? ${contactForm.email} : ''"
+                           required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="telephone" class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" id="telephone" name="telephone"
+                           th:value="${contactForm != null} ? ${contactForm.telephone} : ''"
+                           pattern="[0-9]{7,15}">
+                    <small class="text-muted">Formato: 1234567890 (sin espacios ni guiones)</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="company" class="form-label">Empresa</label>
+                    <input type="text" class="form-control" id="company" name="company"
+                           th:value="${contactForm != null} ? ${contactForm.company} : ''"
+                           maxlength="50">
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje*</label>
+                    <textarea class="form-control" id="message" name="message" rows="5"
+                              th:text="${contactForm != null} ? ${contactForm.message} : ''"
+                              required minlength="10" maxlength="500"></textarea>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">Enviar mensaje</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Columna de la imagen (ocupará 6 columnas en pantallas grandes) -->
+        <div class="col-lg-6 contact-image-container d-flex align-items-center">
+            <img th:src="@{/images/contactenos.jpg}" alt="Contacto Surge Partners" class="contact-image">
+        </div>
+    </div>
+</main>
+
+<div th:insert="~{fragment/footer :: footer-inner}"></div>
+
+<!-- Corregí el espacio en la URL del script de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Validación adicional antes de enviar
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        const telephone = document.getElementById('telephone').value;
+        if(telephone && !/^[0-9]{7,15}$/.test(telephone)) {
+            alert('Por favor ingrese un número de teléfono válido (solo números, 7-15 dígitos)');
+            e.preventDefault();
+        }
+    });
+</script>
+</body>
+</html>
