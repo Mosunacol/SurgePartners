@@ -1,0 +1,5 @@
+.social-links {
+    display: flex;
+    gap: 12px;  /* Espacio entre iconos */
+    align-items: center;
+}

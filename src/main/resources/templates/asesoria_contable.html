@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asesoria Contable | Surge Partners</title>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <link rel="icon" th:href="@{/images/favicon.png}" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+        crossorigin="anonymous">
+  <link th:href="@{/css/footer.css}" rel="stylesheet">
+  <link th:href="@{/css/social_media.css}" rel="stylesheet">
+  <link th:href="@{/css/revisoria.css}" rel="stylesheet">
+
+</head>
+<body>
+<!-- Insertar header -->
+<div th:insert="~{fragment/header :: header}"></div>
+<main>
+  <div class="col-lg-7 asesoria_contable-image-container d-flex align-items-center">
+    <img th:src="@{/images/asesoria_contable.jpg}" alt="asesoria_contable Surge Partners" class="asesoria_contable-image">
+    <h1 class="revisoria-title"> Asesoria Contable </h1>
+  </div>
+  <div class="row mt-4">
+    <div class="row">
+      <!-- Columna izquierda: Texto -->
+      <div class=" col-md-6 pe-md-5">
+        <div class="ps-5">
+          <section class="mb-5">
+            <p> En <strong>SURGE PARTNERS SAS,</strong> entendemos que las actividades contables trascienden el mero registro;
+              son la base para una toma de decisiones informada y estratégica. Nuestra Asesoría Contable se
+              fundamenta en un enfoque de cumplimiento normativo riguroso y una interpretación profunda,
+              asegurando que su alta gerencia disponga de información financiera fidedigna, analizada y
+              contextualizada para impulsar el crecimiento sostenible.</p>
+
+            <p>Nuestro compromiso es ir más allá de la mera verificación. A través de nuestros dictámenes,
+              buscamos identificar oportunidades de mejora en sus procesos, fortaleciendo sus sistemas de
+              control interno y optimizando su eficiencia operativa.</p>
+          </section>
+
+          <section class="mb-5">
+            <h2 class="h4 text-primary mb-3">Nuestros Servicios Especializados:</h2>
+            <ul class="list-unstyled">
+              <li class = "mb-3">✔️ Análisis Transaccional Detallado: Realizamos un escrutinio minucioso de sus transacciones económicas diarias,
+                                     garantizando la exactitud y conformidad de sus registros.</li>
+
+
+              <li class = "mb-3">✔️ Gestión y Optimización Presupuestal: Colaboramos en la elaboración, seguimiento y ajuste de sus presupuestos,
+                                    facilitando un control financiero efectivo y una asignación de recursos eficiente.</li>
+
+              <li class = "mb-3">✔️ Implementación y Asesoría NIIF: Brindamos acompañamiento experto en la aplicación e interpretación de las Normas Internacionales de Información Financiera (NIIF)
+                                    , asegurando la estandarización y transparencia de sus reportes.</li>
+
+              <li class = "mb-3">✔️ Control y Planificación Financiera-Administrativa: Diseñamos y supervisamos sistemas de información financiera y administrativa que le permiten monitorear el desempeño,
+                                    identificar desviaciones y optimizar la operación.</li>
+
+              <li class = "mb-3">✔️ Elaboración de Informes Financieros Clave: Generamos reportes contables precisos y oportunos,
+                                    fundamentales para la evaluación del rendimiento y la proyección financiera. </li>
+
+              <li class = "mb-3">✔️ Interpretación Estratégica de Estados Financieros: Convertimos los datos de sus estados financieros en insights accionables,
+                                    facilitando una comprensión profunda de su situación económica y respaldando decisiones estratégicas cruciales. </li>
+              <li class = "mb-3">✔️ Estudio y Optimización de Costos: Realizamos análisis de costos detallados para identificar áreas de mejora,
+                                    permitiendo la implementación de decisiones sólidas y oportunas que propicien un crecimiento sostenido para su organización. </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Imagen y texto -->
+      <div class="col-md-6  d-flex justify-content-center align-items-center">
+        <div class="text-center p-4">
+          <img th:src="@{/images/asesoria_contable.png}"
+               alt="Mercado Global" width="450" height="450">
+          <h3 class="mt-3 text-primary">Expertos en tributación</h3>
+          <p class="text-muted">Nuestros profesionales certificados</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div th:insert="~{fragment/footer :: footer-inner}"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+</html>
