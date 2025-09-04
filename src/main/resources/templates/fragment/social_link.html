@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Redes Sociales</title>
+    <style>
+        .social-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .social-links a img {
+            width: 28px;
+            height: 28px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .social-links a img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+<!-- 🔗 Fragmento de redes sociales -->
+<div th:fragment="social-links" class="social-links">
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/tu_pagina"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Facebook">
+        <img src="/images/facebook.png" alt="Facebook">
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/company/tu_empresa"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="LinkedIn">
+        <img src="/images/linkedin.png" alt="LinkedIn">
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/tu_empresa"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Instagram">
+        <img src="/images/instagram.png" alt="Instagram">
+    </a>
+</div>
+</body>
+</html>

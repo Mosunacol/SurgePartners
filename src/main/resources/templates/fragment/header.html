@@ -6,14 +6,17 @@
     <title>Menú de Navegación</title>
     <link rel="icon" th:href="@{/images/favicon.png}" type="image/png">
     <link th:href="@{~/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/revisoria.css}" rel="stylesheet">
+    <link th:href="@{/css/social_media.css}" rel="stylesheet">
+
 </head>
 <body>
 <div th:fragment="header">
-    <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;" data-bs-theme="light">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #e3f2fd;" data-bs-theme="light">
         <div class="container-fluid">
             <!-- Logo -->
-            <a class="navbar-brand" th:href="@{~/}">
-                <img th:src="@{/images/surge_partners.jpg}" alt="Logo" width="200">
+            <a class="navbar-brand" th:href="@{/home}">
+                <img th:src="@{/images/surge_partners.png}" alt="Logo" width="200">
             </a>
 
             <!-- Botón toggler (IMPORTANTE) -->
@@ -27,10 +30,10 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active fs-5" th:href="@{~/api/home}">Inicio</a>
+                        <a class="nav-link active fs-5" th:href="@{/home}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" th:href="@{~/api/about}">Quiénes Somos</a>
+                        <a class="nav-link fs-5" th:href="@{/about}">Quiénes Somos</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -38,17 +41,30 @@
                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Servicios
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-                            <li><a class="dropdown-item" href="#">Acción</a></li>
-                            <li><a class="dropdown-item" href="#">Otra acción</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
+                        <ul class="dropdown-menu fs-6" aria-labelledby="dropdownMenu">
+                            <li><a class="dropdown-item py-3" th:href="@{/revisoria_fiscal}">Revisoría Fiscal</a></li>
+                            <li><a class="dropdown-item py-3" th:href="@{/asesoria_tributaria}">Asesoría Tributaria</a></li>
+                            <li><a class="dropdown-item py-3" th:href="@{/auditoria_externa}">Auditoria Externa</a></li>
+                            <li><a class="dropdown-item py-3" th:href="@{/asesoria_contable}" >Asesoría Contable</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" th:href="@{~/api/contact}">Contacto</a>
+                        <a class="nav-link fs-5" th:href="@{/contact}">Contacto</a>
                     </li>
                 </ul>
+
+                <!-- Redes sociales a la derecha -->
+                <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img th:src="@{/images/facebook.png}" alt="Facebook" style="width:28px; height:28px;">
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img th:src="@{/images/instagram.png}" alt="Instagram" style="width:28px; height:28px;">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <img th:src="@{/images/linkedin.png}" alt="LinkedIn" style="width:28px; height:28px;">
+                    </a>
+                </div>
             </div>
         </div>
     </nav>

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailService {
 
+
     private final JavaMailSender mailSender;
 
     public EmailService(JavaMailSender mailSender) {
@@ -15,16 +16,18 @@ public class EmailService {
 
     public void sendContactEmail(String fromEmail, String name, String company, String message, String telephone) {
         SimpleMailMessage email = new SimpleMailMessage();
-        email.setTo("contacto@surgepartners.com"); // Correo destino actualizar con el final
+        email.setTo("monicantosuna@gmail.com"); // Correo destino actualizar con el final
         email.setSubject("Nuevo mensaje de: " + name);
 
         email.setText(
-                "Email: " + fromEmail + "\n" +
-                        "Empresa" + company + "\n" +
-                        "Teléfono: " + telephone + "\n\n" +
-                        "Mensaje:\n" + message
+                "=== DATOS DEL FORMULARIO ===\n" +
+                        "Nombre: " + name + "\n" +
+                        "Email: " + fromEmail + "\n" +
+                        "Empresa: " + (company != null ? company : "No especificada") + "\n" +
+                        "Teléfono: " + (telephone != null ? telephone : "No proporcionado") + "\n\n" +
+                        "Mensaje:\n" + message + "\n\n" +
+                        "=== FIN DEL MENSAJE ==="
         );
-
         mailSender.send(email);
     }
 }

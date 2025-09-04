@@ -11,5 +11,5 @@ public class ContactForm {
     private String message;
     private String telephone;
 
-    // Getters y Setters (usa Lombok @Data si lo prefieres)
+    // Uso de Getters y Setters
 }

@@ -10,38 +10,8 @@
           rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
           crossorigin="anonymous">
     <link th:href="@{/css/footer.css}" rel="stylesheet">
-    <style>
-        .contact-image-container {
-             height: 100%;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
-         }
-
-         .contact-image {
-             width: 100%;
-             height: auto; /* Mantiene la proporción de la imagen */
-             object-fit: contain; /* Muestra toda la imagen sin recortar */
-             border-radius: 8px;
-             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-             max-height: 500px; /* Altura máxima ajustable según necesites */
-         }
-
-         .form-container {
-             padding-right: 2rem;
-         }
-
-         @media (max-width: 992px) {
-             .contact-image-container {
-                 margin-top: 2rem;
-                 height: auto;
-             }
-             .contact-image {
-                 max-height: 400px; /* Altura menor para móviles */
-             }
-         }
-    </style>
+    <link th:href="@{/css/contact.css}" rel="stylesheet">
+    <link th:href="@{/css/social_media.css}" rel="stylesheet">
 </head>
 <body>
 <!-- Insertar header -->
@@ -103,8 +73,10 @@
         </div>
 
         <!-- Columna de la imagen (ocupará 6 columnas en pantallas grandes) -->
-        <div class="col-lg-6 contact-image-container d-flex align-items-center">
+        <div class="col-md-6  d-flex justify-content-center align-items-center">
+            <div class="text-center p-4">
             <img th:src="@{/images/contactenos.jpg}" alt="Contacto Surge Partners" class="contact-image">
+        </div>
         </div>
     </div>
 </main>
